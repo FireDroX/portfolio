@@ -1,0 +1,59 @@
+.subjectDiv {
+    display: flex;
+    flex-direction: row;
+    width: 20rem;
+    height: 6rem;
+}
+
+.subjectText {
+    background-color: transparent;
+    color: var(--color-text);
+    text-align: center;
+    position: relative;
+    top: 80%;
+    left: -12%;
+    height: 1.5rem;
+    font-weight: 700;
+    border: none;
+    padding-inline: .7rem;
+    cursor: pointer;
+}
+
+.subjectText:hover::before {
+    transform: scaleX(1);
+}
+
+.subjectText-content {
+    position: relative;
+    z-index: 1;
+    font-family: Segoe UI;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0;
+    animation: fade-in var(--fade-in-delay) forwards;
+    animation-delay: calc(var(--fade-in-delay) * var(--subject-index) + 1s);
+}
+
+.subjectText::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background : var(--color-primary);
+    transition: all 0.475s;
+}
+
+.subjectLeft {
+    background-color: var(--color-accent);
+    height: 100%;
+    width: 5rem;
+    margin-left: 2rem;
+    clip-path: polygon(10% 0, 10% 90%, 45% 90%, 45% 100%, 0 100%, 0 0);
+}
